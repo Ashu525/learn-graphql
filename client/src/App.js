@@ -1,8 +1,9 @@
 import BookList from "./components/BookList";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
+import AddBook from "./components/AddBook";
 
-// Adds messages only in a dev environment
+// Adds messages
 loadDevMessages();
 loadErrorMessages();
 
@@ -17,6 +18,7 @@ function App() {
       <div id="main">
         <h1>Ashutosh's reading list</h1>
         <BookList />
+        <AddBook />
       </div>
     </ApolloProvider>
   );
