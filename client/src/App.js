@@ -1,8 +1,14 @@
 import BookList from "./components/BookList";
-import { ApolloProvider, ApolloClient } from "@apollo/client";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
+
+// Adds messages only in a dev environment
+loadDevMessages();
+loadErrorMessages();
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
+  cache: new InMemoryCache(),
 });
 
 function App() {

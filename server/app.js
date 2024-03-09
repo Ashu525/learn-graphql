@@ -2,8 +2,11 @@ const express = require("express");
 const { createHandler } = require("graphql-http/lib/use/express");
 const schema = require("./schema/schema");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors());
 
 mongoose.connect(
   "mongodb+srv://ashu525:ashu525@cluster0.cqxoht4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
