@@ -2,6 +2,7 @@ import BookList from "./components/BookList";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 import AddBook from "./components/AddBook";
+import { CenteredHeading } from "./components/styles/Styles";
 
 // Adds messages
 loadDevMessages();
@@ -16,7 +17,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div id="main">
-        <h1>Ashutosh's reading list</h1>
+        <CenteredHeading>Ashutosh's reading list</CenteredHeading>
         <BookList />
         <AddBook />
       </div>
