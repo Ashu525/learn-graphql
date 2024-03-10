@@ -1,9 +1,9 @@
 import { useQuery, useMutation } from "@apollo/client";
 import { FormContainer } from "./styles/Styles";
 import {
-  getAuthorQuery,
+  getAuthorsQuery,
   addBookMutation,
-  getBookQuery,
+  getBooksQuery,
 } from "../queries/queries";
 import { useState } from "react";
 function AddBook() {
@@ -12,7 +12,7 @@ function AddBook() {
     genre: "",
     authorId: null,
   });
-  const { loading, data } = useQuery(getAuthorQuery);
+  const { loading, data } = useQuery(getAuthorsQuery);
   const [addBook] = useMutation(addBookMutation);
 
   const handleAddBook = async (e) => {
@@ -20,7 +20,7 @@ function AddBook() {
     try {
       const { data: newBook } = await addBook({
         variables: bookInfo,
-        refetchQueries: [{ query: getBookQuery }],
+        refetchQueries: [{ query: getBooksQuery }],
       });
       console.log("New book added:", newBook);
     } catch (error) {

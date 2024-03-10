@@ -4,6 +4,8 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1em;
+  background-color: #f2f2f2;
+  padding: 1em;
   div {
     display: flex;
     justify-content: space-between;
@@ -41,4 +43,8 @@ export const CenteredHeading = styled.h1`
 export const CenteredContainer = styled.div`
   justify-content: center;
   display: flex;
+  flex-direction: column;
+  li {
+    cursor: pointer;
+  }
 `;
