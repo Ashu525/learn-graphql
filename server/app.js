@@ -3,14 +3,13 @@ const { createHandler } = require("graphql-http/lib/use/express");
 const schema = require("./schema/schema");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 
 app.use(cors());
 
-mongoose.connect(
-  "mongodb+srv://ashu525:ashu525@cluster0.cqxoht4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-);
+mongoose.connect(process.env.DB_URL);
 
 mongoose.connection.once("open", () => {
   console.log("connected to database");
