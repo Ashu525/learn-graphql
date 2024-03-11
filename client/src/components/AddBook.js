@@ -28,32 +28,24 @@ function AddBook() {
     }
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setBookInfo((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   return (
     <FormContainer onSubmit={handleAddBook}>
       <div>
         <label htmlFor="book-name">Book Name</label>
-        <input
-          type="text"
-          name="book-name"
-          onChange={(e) => setBookInfo({ ...bookInfo, name: e.target.value })}
-        />
+        <input type="text" name="name" onChange={handleChange} />
       </div>
       <div>
         <label htmlFor="genre">Genre</label>
-        <input
-          type="text"
-          name="genre"
-          onChange={(e) => setBookInfo({ ...bookInfo, genre: e.target.value })}
-        />
+        <input type="text" name="genre" onChange={handleChange} />
       </div>
       <div>
-        <label htmlFor="author">Author</label>
-        <select
-          name="author"
-          onChange={(e) => {
-            setBookInfo({ ...bookInfo, authorId: e.target.value });
-          }}
-        >
+        <label htmlFor="authorId">Author</label>
+        <select name="authorId" onChange={handleChange}>
           {loading ? (
             <option>Loading authors</option>
           ) : (
