@@ -18,11 +18,11 @@ function AddBook() {
   const handleAddBook = async (e) => {
     e.preventDefault();
     try {
-      const { data: newBook } = await addBook({
+      await addBook({
         variables: bookInfo,
         refetchQueries: [{ query: getBooksQuery }],
       });
-      console.log("New book added:", newBook);
+      e.target.reset();
     } catch (error) {
       console.error("Error adding book:", error);
     }
@@ -35,8 +35,9 @@ function AddBook() {
 
   return (
     <FormContainer onSubmit={handleAddBook}>
+      <h3>Add Book</h3>
       <div>
-        <label htmlFor="book-name">Book Name</label>
+        <label htmlFor="name">Book Name</label>
         <input type="text" name="name" onChange={handleChange} />
       </div>
       <div>

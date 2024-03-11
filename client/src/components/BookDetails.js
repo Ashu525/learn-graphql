@@ -10,7 +10,8 @@ const BookDetails = ({ bookId }) => {
   if (error) return <p>Error: {error.message}</p>;
   if (!bookId) return <span>No book selected!</span>;
   return (
-    <div id="book-details">
+    <div id="details">
+      <h3>Book Details</h3>
       <div>
         <label htmlFor="book-name">Name:</label>
         <p name="book-name">{data.book.name}</p>

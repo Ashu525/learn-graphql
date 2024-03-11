@@ -34,6 +34,9 @@ export const FormContainer = styled.form`
       box-shadow: 0 0 5px green;
     }
   }
+  h3 {
+    text-align: center;
+  }
 `;
 
 export const CenteredHeading = styled.h1`
@@ -41,10 +44,25 @@ export const CenteredHeading = styled.h1`
 `;
 
 export const CenteredContainer = styled.div`
-  justify-content: center;
+  justify-content: flex-start;
   display: flex;
   flex-direction: column;
+  ul {
+    padding: 0 1em;
+    max-height: 5em;
+    overflow: auto;
+  }
   li {
     cursor: pointer;
   }
+`;
+
+export const ListContainer = styled.div`
+  display: flex;
+  gap: 1em;
+`;
+
+export const FormsWrapper = styled.div`
+  display: flex;
+  gap: 1em;
 `;

@@ -15,10 +15,13 @@ code {
 #main {
   margin: auto;
   align-items: center;
-  width: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-#book-details {
+#details {
   div {
     display: flex;
     align-items: center;

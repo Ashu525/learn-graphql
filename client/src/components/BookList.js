@@ -11,6 +11,7 @@ function BookList() {
   if (error) return <p>Error loading books</p>;
   return (
     <CenteredContainer>
+      <h3>Book List</h3>
       <ul id="book-list">
         {data.books.map((book) => (
           <li key={book.id} onClick={() => setSelected(book.id)}>
